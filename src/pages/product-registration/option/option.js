@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import * as S from 'pages/product-registration/option/styles';
 
 import OptionTop from 'pages/product-registration/option/option-top';
@@ -44,14 +44,9 @@ function Option() {
       }
     }
 
-    console.log([...new Set(msg)]);
-
+    console.log(optionSet);
     alert([...new Set(msg)]);
   };
-
-  useEffect(() => {
-    console.log(optionSet);
-  });
 
   return (
     <S.Section>
