@@ -32,3 +32,17 @@ export const RowContent = styled.div`
   flex: 5.41;
   padding: 25px 30px;
 `;
+
+export const DatePickerContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 485px;
+`;
+
+export const Separator = styled.p`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+`;
