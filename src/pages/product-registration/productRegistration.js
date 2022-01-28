@@ -12,7 +12,8 @@ function ProductRegistration() {
       <Period />
       <Information />
       <Option />
-      <ImageTab />
+      <ImageTab tabTitle="상품 소개 이미지" />
+      <ImageTab tabTitle="구매자 추천 이미지" />
       <Specs />
       <Delivery />
       <Misc />
