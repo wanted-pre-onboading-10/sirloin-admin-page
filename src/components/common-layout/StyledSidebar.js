@@ -30,17 +30,7 @@ export const H1 = styled.h1`
   padding: 4px 4px 4px 8px;
 `;
 
-// export const Content = styled.div`
-//   width: 100%;
-//   min-height: 0;
-//   max-height: 0;
-//   background: #f5f5f7;
-//   color: black;
-//
-//   overflow: hidden;
-//   padding: 0 15px;
-//   transition: 0.5s ease;
-// `;
+
 
 export const Content = styled.div`
   display: ${props =>
