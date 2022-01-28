@@ -24,21 +24,68 @@ const SectionTop = styled.div`
   margin-bottom: 10px;
 `;
 
+const Title = styled.div`
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px;
+`;
+
+const InputBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const InputText = styled.input`
+  padding: 0.9rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: ${props => props.width || 'calc(100% - 20px)'};
+  margin: ${props => props.margin || 10}px;
+`;
+
+const Select = styled.select`
+  padding: 0.9rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 10px;
+  background-color: #fff;
+`;
+
 const InitOption = styled.div`
   margin-top: 100px;
   margin-bottom: 100px;
   text-align: center;
 `;
 
-const OptionSet = styled.div`
+const Tab = styled.div`
   background-color: #fff;
   border: 1px solid #ddd;
-  padding: 10px;
+  padding: ${props => props.padding || 10}px;
   margin: 10px;
   margin-top: 0px;
   text-align: left;
 `;
 
+const Table = styled.div`
+  margin: 10px;
+  width: calc(100% - 20px);
+`;
+
+const RowTitle = styled.div`
+  width: 200px;
+`;
+const Row = styled.div`
+  width: ${props => props.width || 'auto'};
+  display: flex;
+  justify-content: space-between;
+  align-items: center; ;
+`;
+
+const TabTop = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
 const OptionBox = styled.div`
   background-color: #fff;
   border: 1px solid #ddd;
@@ -117,21 +164,35 @@ const CommonSquareBtn = styled.button`
   width: ${props => props.width || 'auto'};
   padding: 1rem;
   height: inherit;
-  background-color: #fff;
+  background-color: ${props => props.back || '#fff'};
   border: 1px solid #2000ae;
   border-radius: 5px;
   margin-top: ${props => props.marginTB || 0}px;
   margin-bottom: ${props => props.marginTB || 0}px;
+  margin-left: ${props => props.marginLR || 0}px;
+  margin-right: ${props => props.marginLR || 0}px;
+`;
+
+const CommonBtn = styled.button`
+  padding: 0.8rem;
+  width: 150px;
+  color: #2000ae;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin: 10px 0;
 `;
 
 const DeleteBtn = styled.button`
-  width: 50px;
+  width: ${props => props.width || 50}px;
+  height: ${props => props.height || 'auto'};
   padding: ${props => props.padding || '0.4'}rem;
-  border: 1px solid red;
+  border: 1px solid ${props => props.color || 'red'};
   border-radius: 5px;
   background-color: #fff;
-  color: red;
-  margin: 10px;
+  color: ${props => props.font || 'red'};
+  margin: ${props => props.margin || 10}px;
+  margin-top: ${props => props.marginTB || 10}px;
+  margin-top: ${props => props.marginTB || 10}px;
 `;
 
 const PlusButton = styled.button`
@@ -149,27 +210,6 @@ const PlusButtonLabel = styled.span`
   left: 10px;
 `;
 
-const InputBox = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
-const InputText = styled.input`
-  padding: 0.9rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  width: ${props => props.width || 'calc(100% - 20px)'};
-  margin: 10px;
-`;
-
-const Select = styled.select`
-  padding: 0.9rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  margin: 10px;
-  background-color: #fff;
-`;
-
 const DiscountRate = styled.div`
   display: flex;
   flex-direction: column;
@@ -183,9 +223,16 @@ export {
   Section,
   SectionTop,
   SectionTitle,
+  Title,
+  Tab,
+  Table,
+  Row,
+  RowTitle,
+  TabTop,
+  CommonSquareBtn,
+  CommonBtn,
   DeleteBtn,
   InitOption,
-  OptionSet,
   OptionBox,
   OptionBoxTop,
   SubOptionBox,
@@ -195,7 +242,6 @@ export {
   OptionImageInput,
   OptionInputLabel,
   OptionInputButton,
-  CommonSquareBtn,
   PlusButton,
   PlusButtonLabel,
   InputText,

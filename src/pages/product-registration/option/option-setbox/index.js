@@ -33,7 +33,7 @@ function OptionSetBox({ optionSet, setOptionSet }) {
           <S.DeleteBtn type="button" value={setIdx} onClick={removeOptionSet}>
             삭제
           </S.DeleteBtn>
-          <S.OptionSet>
+          <S.Tab>
             <OptionImg
               idx={setIdx}
               optionSet={optionSet}
@@ -66,7 +66,7 @@ function OptionSetBox({ optionSet, setOptionSet }) {
               marginTB={10}>
               + 옵션 추가
             </S.CommonSquareBtn>
-          </S.OptionSet>
+          </S.Tab>
         </div>
       ))}
     </>

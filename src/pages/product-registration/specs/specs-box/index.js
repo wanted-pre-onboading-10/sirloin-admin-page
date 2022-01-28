@@ -1,4 +1,6 @@
 import propTypes from 'prop-types';
+import * as S from 'pages/product-registration/option/styles';
+
 import { getIdx } from 'pages/product-registration/option/utils';
 
 function SpecsBox({ productInfo, setProductInfo }) {
@@ -92,57 +94,82 @@ function SpecsBox({ productInfo, setProductInfo }) {
   return (
     <div>
       {productInfo.map((info, infoIdx) => (
-        <div key={(info, infoIdx)}>
-          <div>
-            <span>정보고시 {infoIdx + 1}</span>
-            <button type="button" value={infoIdx} onClick={removeProductInfo}>
+        <S.Tab key={(info, infoIdx)} padding={20}>
+          <S.TabTop>
+            <S.Title>정보고시 {infoIdx + 1}</S.Title>
+            <S.DeleteBtn
+              type="button"
+              value={infoIdx}
+              onClick={removeProductInfo}
+              color="#ddd"
+              font="#888"
+              margin={20}
+              marginTB={20}>
               삭제
-            </button>
-          </div>
+            </S.DeleteBtn>
+          </S.TabTop>
 
-          {info.info.map((data, idx) => (
-            <div key={(data, idx)}>
-              <span>{data.title}</span>
-              <input
-                type="text"
-                placeholder={data.placeholder}
-                value={data.state}
-                onChange={e => saveInfo(infoIdx, idx, e)}
-              />
-            </div>
-          ))}
+          <S.Table>
+            {info.info.map((data, idx) => (
+              <S.Row key={(data, idx)}>
+                <S.RowTitle>{data.title}</S.RowTitle>
+                <S.InputText
+                  type="text"
+                  placeholder={data.placeholder}
+                  value={data.state}
+                  onChange={e => saveInfo(infoIdx, idx, e)}
+                  width="500px"
+                />
+              </S.Row>
+            ))}
 
-          {info.other.map((data, idx) => (
-            <div key={(data, idx)}>
-              <input
-                type="text"
-                placeholder="항목 제목 자유 입력"
-                value={data.title}
-                onChange={e => saveOtherInfoTitle(infoIdx, idx, e)}
-              />
-              <input
-                type="text"
-                placeholder="내용을 입력해주세요."
-                value={data.state}
-                onChange={e => saveOtherInfo(infoIdx, idx, e)}
-              />
-              <button
-                type="button"
-                value={`${infoIdx}/${idx}`}
-                onClick={removeOtherInfo}>
-                삭제
-              </button>
-            </div>
-          ))}
-          <button type="button" value={infoIdx} onClick={addOtherInfo}>
-            + 항목 추가
-          </button>
-        </div>
+            {info.other.map((data, idx) => (
+              <S.Row key={(data, idx)}>
+                <S.InputText
+                  type="text"
+                  placeholder="항목 제목 자유 입력"
+                  value={data.title}
+                  onChange={e => saveOtherInfoTitle(infoIdx, idx, e)}
+                  margin={-5}
+                  width="250px"
+                />
+                <S.Row width="520px">
+                  <S.InputText
+                    type="text"
+                    placeholder="내용을 입력해주세요."
+                    value={data.state}
+                    onChange={e => saveOtherInfo(infoIdx, idx, e)}
+                  />
+                  <S.DeleteBtn
+                    type="button"
+                    value={`${infoIdx}/${idx}`}
+                    onClick={removeOtherInfo}
+                    height="45px"
+                    color="#ddd"
+                    font="red"
+                    width={100}>
+                    삭제
+                  </S.DeleteBtn>
+                </S.Row>
+              </S.Row>
+            ))}
+            <S.CommonBtn type="button" value={infoIdx} onClick={addOtherInfo}>
+              {' '}
+              + 항목 추가
+            </S.CommonBtn>
+          </S.Table>
+        </S.Tab>
       ))}
 
-      <button type="button" onClick={addProductInfo}>
+      <S.CommonSquareBtn
+        type="button"
+        onClick={addProductInfo}
+        width="calc(100% - 20px)"
+        marginLR={10}
+        marginTB={20}
+        back="#efefef">
         + 정보고시 추가
-      </button>
+      </S.CommonSquareBtn>
     </div>
   );
 }

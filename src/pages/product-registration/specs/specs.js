@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import * as S from 'pages/product-registration/specs/styles';
+import * as S from 'pages/product-registration/option/styles';
 import SpecsBox from 'pages/product-registration/specs/specs-box';
 
 const initInfo = [
@@ -49,15 +49,11 @@ function Specs() {
 
   return (
     <S.Section>
-      <S.SectionTitle>
-        <span>상품 정보 고시</span>
-      </S.SectionTitle>
+      <S.SectionTop>
+        <S.SectionTitle>상품 정보 고시</S.SectionTitle>
+      </S.SectionTop>
 
       <SpecsBox productInfo={productInfo} setProductInfo={setProductInfo} />
-
-      <button type="button" onClick={tableCheck}>
-        체크
-      </button>
     </S.Section>
   );
 }
