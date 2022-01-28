@@ -1,25 +1,23 @@
 import styled from 'styled-components';
 import { StyledCommonSaveBtn } from 'components/common-button/CommonBtns';
 
-function TotalContainer() {
-  return (
-    <>
-      <BtnContainer>
-        <StyledCommonSaveBtn>저장하기</StyledCommonSaveBtn>
-      </BtnContainer>
-      <StyledTotalContainer />
-    </>
-  );
-}
+// function TotalContainer() {
+//   return
+//       <StyledTotalContainer />
+//   );
+// }
 
-const StyledTotalContainer = styled.div`
+export const StyledTotalContainer = styled.div`
   width: 100%;
-  height: 100px;
+  height: 8000px;
+  position: relative;
+  left: 200px;
+  padding: 30px;
 `;
 
-const BtnContainer = styled.div`
+export const BtnContainer = styled.div`
   width: 100%;
   position: relative;
   left: 200px;
 `;
-export default TotalContainer;
+// export default TotalContainer;
