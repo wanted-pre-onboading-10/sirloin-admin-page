@@ -1,5 +1,12 @@
+import SlideToggle from 'components/slide-toggle/slideToggle';
+
 function Misc() {
-  return <div>misc</div>;
+  return (
+    <div>
+      misc
+      <SlideToggle />
+    </div>
+  );
 }
 
 export default Misc;
