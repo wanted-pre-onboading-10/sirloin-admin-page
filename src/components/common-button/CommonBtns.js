@@ -1,55 +1,6 @@
 import styled from 'styled-components';
-import propTypes from 'prop-types';
 
-function CommonBtn({ title }) {
-  return <StyledCommonBtn>{title}</StyledCommonBtn>;
-}
-
-CommonBtn.propTypes = {
-  title: propTypes.number.isRequired,
-};
-
-function CommonSaveBtn({ title }) {
-  return <StyledCommonSaveBtn>{title}</StyledCommonSaveBtn>;
-}
-
-CommonSaveBtn.propTypes = {
-  title: propTypes.string.isRequired,
-};
-
-function CommonDltRedBtn({ title }) {
-  return <StyledCommonDltRedBtn>{title}</StyledCommonDltRedBtn>;
-}
-
-CommonDltRedBtn.propTypes = {
-  title: propTypes.string.isRequired,
-};
-
-function CommonTransBtn({ title }) {
-  return <StyledCommonTransBtn>{title}</StyledCommonTransBtn>;
-}
-
-CommonTransBtn.propTypes = {
-  title: propTypes.string.isRequired,
-};
-
-function CommonDltSquareBtn({ title }) {
-  return <StyledCommonDltSquareBtn>{title}</StyledCommonDltSquareBtn>;
-}
-
-CommonDltSquareBtn.propTypes = {
-  title: propTypes.string.isRequired,
-};
-
-function CommonSquareBtn({ title }) {
-  return <StyledCommonSquareBtn>{title}</StyledCommonSquareBtn>;
-}
-
-CommonSquareBtn.propTypes = {
-  title: propTypes.string.isRequired,
-};
-
-const StyledCommonBtn = styled.button`
+export const StyledCommonBtn = styled.button`
   background-color: white;
   color: ${props => props.theme.colors.black};
   height: 100%;
@@ -62,39 +13,30 @@ const StyledCommonBtn = styled.button`
   line-height: 40px;
 `;
 
-const StyledCommonSaveBtn = styled(StyledCommonBtn)`
+export const StyledCommonSaveBtn = styled(StyledCommonBtn)`
   background-color: ${props => props.theme.colors.highlight};
   color: white;
   line-height: 32px;
   border: 1px solid ${props => props.theme.colors.highlight};
 `;
 
-const StyledCommonDltRedBtn = styled(StyledCommonBtn)`
+export const StyledCommonDltRedBtn = styled(StyledCommonBtn)`
   background-color: white;
   color: red;
   border: 1px solid red;
 `;
 
-const StyledCommonTransBtn = styled(StyledCommonBtn)`
+export const StyledCommonTransBtn = styled(StyledCommonBtn)`
   background-color: transparent;
   color: ${props => props.theme.colors.grey_3}
   border: 1px solid #c4c4c4;
 `;
 
-const StyledCommonDltSquareBtn = styled(StyledCommonDltRedBtn)`
+export const StyledCommonDltSquareBtn = styled(StyledCommonDltRedBtn)`
   border-radius: 0px;
   border: 1px solid #c4c4c4;
 `;
 
-const StyledCommonSquareBtn = styled(StyledCommonBtn)`
+export const StyledCommonSquareBtn = styled(StyledCommonBtn)`
   border-radius: 0px;
 `;
-
-export {
-  CommonBtn,
-  CommonSaveBtn,
-  CommonDltRedBtn,
-  CommonTransBtn,
-  CommonDltSquareBtn,
-  CommonSquareBtn,
-};
