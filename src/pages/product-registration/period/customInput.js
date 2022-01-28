@@ -16,9 +16,14 @@ const CustomInput = forwardRef(({ onClick, value, isCalendarOpen }, ref) => (
 ));
 
 CustomInput.propTypes = {
-  onClick: propTypes.func.isRequired,
-  value: propTypes.string.isRequired,
+  onClick: propTypes.func,
+  value: propTypes.string,
   isCalendarOpen: propTypes.bool.isRequired,
+};
+
+CustomInput.defaultProps = {
+  onClick: null,
+  value: null,
 };
 
 const Input = styled.button`
