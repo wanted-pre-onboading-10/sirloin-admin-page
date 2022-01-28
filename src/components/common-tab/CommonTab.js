@@ -1,6 +1,19 @@
 import styled from 'styled-components';
 
-export const CommonTableTitle = styled.div`
+export const CommonTableTitle = () => {
+  <StyledCommonTableTitle />;
+};
+export const CommonTableCell = () => {
+  <StyledCommonTableCell />;
+};
+export const CommonTableCellTitle = () => {
+  <StyledCommonTableCellTitle />;
+};
+export const CommonTableCellValue = () => {
+  <StyledCommonTableCellValue />;
+};
+
+export const StyledCommonTableTitle = styled.div`
   display: flex;
   align-items: center;
   flex: 0 0 12rem;
@@ -11,7 +24,7 @@ export const CommonTableTitle = styled.div`
   margin: 0 8px;
 `;
 
-export const CommonTableCell = styled.td`
+export const StyledCommonTableCell = styled.td`
   display: flex;
   border-top: 1px solid #e9eaef;
   border-left: 1px solid #e9eaef;
@@ -21,7 +34,7 @@ export const CommonTableCell = styled.td`
   margin: 0 8px;
 `;
 
-export const CommonTableCellTitle = styled.div`
+export const StyledCommonTableCellTitle = styled.div`
   display: flex;
   align-items: center;
   flex: 0 0 12rem;
@@ -31,7 +44,7 @@ export const CommonTableCellTitle = styled.div`
   width: 12rem;
 `;
 
-export const CommonTableCellValue = styled.div`
+export const StyledCommonTableCellValue = styled.div`
   display: flex;
   align-items: center;
   flex: 1;
