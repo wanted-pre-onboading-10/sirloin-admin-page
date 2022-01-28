@@ -18,6 +18,7 @@ export const Title = styled.div`
 
 export const Row = styled.div`
   display: flex;
+  border-bottom: 1px solid #ccc;
 `;
 
 export const RowTitle = styled.div`
