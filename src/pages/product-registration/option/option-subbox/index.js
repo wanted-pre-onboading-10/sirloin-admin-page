@@ -39,9 +39,9 @@ function OptionSubBox({ setIdx, optIdx, optionSet, setOptionSet }) {
   return (
     <div>
       {optionSet[setIdx].option[optIdx].subOption.map((sub, subIdx) => (
-        <div>
+        <div key={(sub, subIdx)}>
           <S.SubOptionTree src={tree} />
-          <S.SubOptionBox key={(sub, subIdx)}>
+          <S.SubOptionBox>
             <div>
               <S.InputText
                 type="text"
