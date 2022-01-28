@@ -22,12 +22,12 @@ function OptionTop({ optionSet, setOptionSet }) {
   };
 
   return (
-    <S.SectionTitle>
-      <span>상품 옵션*</span>
-      <button type="button" onClick={addOptionSet}>
+    <S.SectionTop>
+      <S.SectionTitle>상품 옵션*</S.SectionTitle>
+      <S.CommonSquareBtn type="button" onClick={addOptionSet}>
         + 옵션 세트 추가
-      </button>
-    </S.SectionTitle>
+      </S.CommonSquareBtn>
+    </S.SectionTop>
   );
 }
 

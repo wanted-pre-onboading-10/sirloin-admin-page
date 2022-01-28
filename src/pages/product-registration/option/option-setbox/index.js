@@ -29,39 +29,45 @@ function OptionSetBox({ optionSet, setOptionSet }) {
   return (
     <>
       {optionSet.map((set, setIdx) => (
-        <S.OptionSet key={(set, setIdx)}>
-          <button type="button" value={setIdx} onClick={removeOptionSet}>
+        <div key={(set, setIdx)}>
+          <S.DeleteBtn type="button" value={setIdx} onClick={removeOptionSet}>
             삭제
-          </button>
+          </S.DeleteBtn>
+          <S.OptionSet>
+            <OptionImg
+              idx={setIdx}
+              optionSet={optionSet}
+              setOptionSet={setOptionSet}
+            />
 
-          <OptionImg
-            idx={setIdx}
-            optionSet={optionSet}
-            setOptionSet={setOptionSet}
-          />
+            {set.option.map((opt, optIdx) => (
+              <S.OptionBox key={(opt, optIdx)}>
+                <OptionBox
+                  setIdx={setIdx}
+                  optIdx={optIdx}
+                  optionSet={optionSet}
+                  setOptionSet={setOptionSet}
+                />
 
-          {set.option.map((opt, optIdx) => (
-            <div key={(opt, optIdx)}>
-              <OptionBox
-                setIdx={setIdx}
-                optIdx={optIdx}
-                optionSet={optionSet}
-                setOptionSet={setOptionSet}
-              />
+                <OptionSubBox
+                  setIdx={setIdx}
+                  optIdx={optIdx}
+                  optionSet={optionSet}
+                  setOptionSet={setOptionSet}
+                />
+              </S.OptionBox>
+            ))}
 
-              <OptionSubBox
-                setIdx={setIdx}
-                optIdx={optIdx}
-                optionSet={optionSet}
-                setOptionSet={setOptionSet}
-              />
-            </div>
-          ))}
-
-          <button type="button" value={setIdx} onClick={addOption}>
-            + 옵션 추가
-          </button>
-        </S.OptionSet>
+            <S.CommonSquareBtn
+              type="button"
+              value={setIdx}
+              onClick={addOption}
+              width="calc(100% - 20px)"
+              marginTB={10}>
+              + 옵션 추가
+            </S.CommonSquareBtn>
+          </S.OptionSet>
+        </div>
       ))}
     </>
   );

@@ -53,13 +53,10 @@ function Option() {
       <OptionTop optionSet={optionSet} setOptionSet={setOptionSet} />
 
       {optionSet.length === 0 ? (
-        <div>옵션세트를 추가하여 옵션을 구성해 주세요.</div>
+        <S.InitOption>옵션세트를 추가하여 옵션을 구성해 주세요.</S.InitOption>
       ) : (
         <OptionSetBox optionSet={optionSet} setOptionSet={setOptionSet} />
       )}
-      <button type="button" onClick={tableCheck}>
-        체크
-      </button>
     </S.Section>
   );
 }

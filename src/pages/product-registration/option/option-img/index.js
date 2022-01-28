@@ -22,16 +22,17 @@ function OptionImg({ idx, optionSet, setOptionSet }) {
 
     if (file) {
       const fileURL = await readFileAsync(file);
-      option[setIdx].image = fileURL;
+      option[setIdx].image = `url(${fileURL})`;
       setOptionSet(option);
     }
   };
 
   return (
     <S.OptionImage>
-      <img src={optionSet[idx].image} width={150} alt="option" />
-
-      <input
+      <S.OptionInputLabel htmlFor={`img-${idx}`} src={optionSet[idx].image}>
+        <S.OptionInputButton>+ 이미지 첨부</S.OptionInputButton>
+      </S.OptionInputLabel>
+      <S.OptionImageInput
         id={`img-${idx}`}
         type="file"
         accept="image/*"

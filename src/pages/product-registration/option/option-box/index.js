@@ -1,4 +1,6 @@
 import propTypes from 'prop-types';
+import * as S from 'pages/product-registration/option/styles';
+
 import { getIdx } from 'pages/product-registration/option/utils';
 
 function OptionBox({ setIdx, optIdx, optionSet, setOptionSet }) {
@@ -58,43 +60,58 @@ function OptionBox({ setIdx, optIdx, optionSet, setOptionSet }) {
   };
 
   return (
-    <div>
-      <button
-        type="button"
-        onClick={removeOption}
-        value={`${setIdx}/${optIdx}`}>
-        삭제
-      </button>
-      <input
+    <>
+      <S.OptionBoxTop>
+        <S.DeleteBtn
+          type="button"
+          onClick={removeOption}
+          value={`${setIdx}/${optIdx}`}>
+          삭제
+        </S.DeleteBtn>
+      </S.OptionBoxTop>
+      <S.InputText
         type="text"
         placeholder="옵션명을 입력해 주세요. (필수)"
         onChange={e => saveOptionTitle(setIdx, optIdx, e)}
         value={optionSet[setIdx].option[optIdx].title}
       />
-      원
-      <input
-        type="number"
-        placeholder="상품 정상가(필수)"
-        onChange={e => saveRegularPrice(setIdx, optIdx, e)}
-      />
-      원<span>{calcDiscount(setIdx, optIdx)} %</span>
-      <input
-        type="number"
-        placeholder="상품 판매가(필수)"
-        onChange={e => saveSalePrice(setIdx, optIdx, e)}
-      />
-      원
-      <input
-        type="number"
-        placeholder="재고 (필수)"
-        onChange={e => saveStock(setIdx, optIdx, e)}
-      />{' '}
-      개
-      <select defaultValue="비과세" onChange={e => saveVAT(setIdx, optIdx, e)}>
-        <option value="비과세">비과세</option>
-        <option value="과세">과세</option>
-      </select>
-    </div>
+      <S.InputBox>
+        <span>
+          <S.InputText
+            type="number"
+            placeholder="상품 정상가(필수)"
+            onChange={e => saveRegularPrice(setIdx, optIdx, e)}
+            width="180px"
+          />
+          원
+        </span>
+        <S.DiscountRate>{calcDiscount(setIdx, optIdx)} %</S.DiscountRate>
+        <span>
+          <S.InputText
+            type="number"
+            placeholder="상품 판매가(필수)"
+            onChange={e => saveSalePrice(setIdx, optIdx, e)}
+            width="180px"
+          />
+          원
+        </span>
+        <span>
+          <S.InputText
+            type="number"
+            placeholder="재고 (필수)"
+            onChange={e => saveStock(setIdx, optIdx, e)}
+            width="120px"
+          />
+          개
+        </span>
+        <S.Select
+          defaultValue="비과세"
+          onChange={e => saveVAT(setIdx, optIdx, e)}>
+          <option value="비과세">비과세</option>
+          <option value="과세">과세</option>
+        </S.Select>
+      </S.InputBox>
+    </>
   );
 }
 

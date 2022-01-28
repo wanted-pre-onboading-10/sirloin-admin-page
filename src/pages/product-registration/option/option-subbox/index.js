@@ -1,5 +1,8 @@
 import propTypes from 'prop-types';
+import * as S from 'pages/product-registration/option/styles';
+
 import { getIdx } from 'pages/product-registration/option/utils';
+import tree from 'pages/product-registration/option/option-subbox/tree.png';
 
 function OptionSubBox({ setIdx, optIdx, optionSet, setOptionSet }) {
   const addSubOption = e => {
@@ -36,33 +39,44 @@ function OptionSubBox({ setIdx, optIdx, optionSet, setOptionSet }) {
   return (
     <div>
       {optionSet[setIdx].option[optIdx].subOption.map((sub, subIdx) => (
-        <div key={(sub, subIdx)}>
-          <input
-            type="text"
-            placeholder="추가 옵션명 (필수)"
-            onChange={e => saveSubOptionTitle(setIdx, optIdx, subIdx, e)}
-          />
-          <input
-            type="number"
-            placeholder="추가 옵션 정상가 (필수)"
-            onChange={e => saveSubRegularPrice(setIdx, optIdx, subIdx, e)}
-          />
-          원
-          <button
-            type="button"
-            value={`${setIdx}/${optIdx}/${subIdx}`}
-            onClick={removeSubOption}>
-            삭제
-          </button>
+        <div>
+          <S.SubOptionTree src={tree} />
+          <S.SubOptionBox key={(sub, subIdx)}>
+            <div>
+              <S.InputText
+                type="text"
+                placeholder="추가 옵션명 (필수)"
+                onChange={e => saveSubOptionTitle(setIdx, optIdx, subIdx, e)}
+                width="380px"
+              />
+            </div>
+            <div>
+              <S.InputText
+                type="number"
+                placeholder="추가 옵션 정상가 (필수)"
+                onChange={e => saveSubRegularPrice(setIdx, optIdx, subIdx, e)}
+                width="250px"
+              />
+              원
+            </div>
+            <S.DeleteBtn
+              type="button"
+              value={`${setIdx}/${optIdx}/${subIdx}`}
+              onClick={removeSubOption}>
+              삭제
+            </S.DeleteBtn>
+          </S.SubOptionBox>
         </div>
       ))}
-      <button
-        type="button"
-        value={`${setIdx}/${optIdx}`}
-        onClick={addSubOption}>
-        +
-      </button>
-      추가 옵션 상품 추가
+      <div>
+        <S.PlusButton
+          type="button"
+          value={`${setIdx}/${optIdx}`}
+          onClick={addSubOption}>
+          +
+        </S.PlusButton>
+        <S.PlusButtonLabel>추가 옵션 상품 등록</S.PlusButtonLabel>
+      </div>
     </div>
   );
 }
