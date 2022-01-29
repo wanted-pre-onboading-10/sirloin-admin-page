@@ -1,11 +1,14 @@
 import { useState } from 'react';
-import SlideToggle from 'components/slide-toggle/slideToggle';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import { DateTimePicker, DesktopDatePicker } from '@mui/lab';
 import { TextField } from '@mui/material';
 import { ReactComponent as ChevronDown } from 'assets/images/chevron-down.svg';
+
 import * as S from 'pages/product-registration/delivery/delivery.style';
+import * as Shared from 'styles/shared';
+
+import SlideToggle from 'components/slide-toggle/slideToggle';
 
 function Delivery() {
   const [isDeliveryClientCustom, setIsDeliveryClientCustom] = useState(false);
@@ -39,33 +42,35 @@ function Delivery() {
   const [normalDeliveryDate, setNormalDeliveryDate] = useState(null);
 
   return (
-    <S.Container>
-      <S.Title>상품 배송 설정</S.Title>
-      <S.Row>
-        <S.RowTitle>사용자 배송일 출발일 지정</S.RowTitle>
-        <S.RowContent>
+    <Shared.Section>
+      <Shared.SectionTitle>상품 배송 설정</Shared.SectionTitle>
+      <Shared.SubSection>
+        <Shared.SubSectionTitle>
+          사용자 배송일 출발일 지정
+        </Shared.SubSectionTitle>
+        <Shared.SubSectionContents>
           <SlideToggle
             type="radio"
             name="delivery"
             id="custom"
             onChange={changeDeliverySetting}
           />
-        </S.RowContent>
-      </S.Row>
-      <S.Row>
-        <S.RowTitle>방문 수령</S.RowTitle>
-        <S.RowContent>
+        </Shared.SubSectionContents>
+      </Shared.SubSection>
+      <Shared.SubSection>
+        <Shared.SubSectionTitle>방문 수령</Shared.SubSectionTitle>
+        <Shared.SubSectionContents>
           <SlideToggle
             type="radio"
             name="delivery"
             id="pickUp"
             onChange={changeDeliverySetting}
           />
-        </S.RowContent>
-      </S.Row>
-      <S.Row>
-        <S.RowTitle>선 주문 예약 배송</S.RowTitle>
-        <S.RowContent>
+        </Shared.SubSectionContents>
+      </Shared.SubSection>
+      <Shared.SubSection>
+        <Shared.SubSectionTitle>선 주문 예약 배송</Shared.SubSectionTitle>
+        <Shared.ColumnSubSectionContents>
           <SlideToggle
             type="radio"
             name="delivery"
@@ -149,9 +154,9 @@ function Delivery() {
               </S.DateAndTitleContainer>
             </LocalizationProvider>
           </S.DatePickerContainer>
-        </S.RowContent>
-      </S.Row>
-    </S.Container>
+        </Shared.ColumnSubSectionContents>
+      </Shared.SubSection>
+    </Shared.Section>
   );
 }
 

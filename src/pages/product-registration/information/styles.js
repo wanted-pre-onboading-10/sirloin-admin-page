@@ -1,39 +1,5 @@
 import styled from 'styled-components';
-
-export const Section = styled.section`
-  width: 100%;
-  max-width: 975px;
-  border: 1px solid #eee;
-  font-family: Arial;
-`;
-
-export const SectionTitle = styled.h2`
-  padding: 1rem;
-  font-weight: 500;
-  font-size: 1.1rem;
-`;
-
-export const SubSection = styled.div`
-  display: grid;
-  grid-template-columns: 175px 1fr;
-  border-top: 1px solid #ddd;
-`;
-
-export const SubSectionTitle = styled.h3`
-  padding: 1.2rem 1rem;
-  background-color: #f7f7f7;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
-  width: 175px;
-  border-right: 1px solid #ddd;
-`;
-
-export const SubSectionContents = styled.div`
-  padding: 1.2rem 1rem;
-  display: flex;
-  gap: 5%;
-  width: 95% - 200px;
-`;
+import * as Shared from 'styles/shared';
 
 export const RoundedSquareButton = styled.button`
   padding: 0.9rem 2.25rem;
@@ -43,7 +9,7 @@ export const RoundedSquareButton = styled.button`
   border-radius: 0.25rem;
 `;
 
-export const TagSectionContents = styled(SubSectionContents)`
+export const TagSectionContents = styled(Shared.SubSectionContents)`
   flex-direction: column;
 `;
 

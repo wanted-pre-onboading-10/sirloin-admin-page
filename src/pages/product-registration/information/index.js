@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 
-import * as S from 'pages/product-registration/information/styles';
+import * as Shared from 'styles/shared';
+
 import CategorySubSection from 'pages/product-registration/information/product-category';
 import ProductNameSubSection from 'pages/product-registration/information/product-name';
 import ProductIntroSubSection from 'pages/product-registration/information/product-intro';
@@ -15,8 +16,8 @@ const ImageSectionsData = [
 
 function Information({ tabTitle }) {
   return (
-    <S.Section>
-      <S.SectionTitle>{tabTitle}</S.SectionTitle>
+    <Shared.Section>
+      <Shared.SectionTitle>{tabTitle}</Shared.SectionTitle>
       <CategorySubSection />
       <ProductTagSubSection />
       <ProductNameSubSection />
@@ -25,7 +26,7 @@ function Information({ tabTitle }) {
         <ProductImageSubSection title={title} btnText={btnText} key={title} />
       ))}
       <ProductStockSubSection stock="##" />
-    </S.Section>
+    </Shared.Section>
   );
 }
 

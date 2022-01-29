@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { nanoid } from 'nanoid';
+
 import * as S from 'pages/product-registration/information/styles';
+import * as Shared from 'styles/shared';
 
 import NameInput from 'pages/product-registration/information/product-name/name-input';
 import ProductCode from 'pages/product-registration/information/product-name/product-code';
@@ -25,19 +27,19 @@ function ProductNameSubSection() {
   }, [name]);
 
   return (
-    <S.SubSection>
-      <S.SubSectionTitle>상품명</S.SubSectionTitle>
+    <Shared.SubSection>
+      <Shared.SubSectionTitle>상품명</Shared.SubSectionTitle>
       <S.CodeSectionContainer>
-        <S.SubSectionContents>
+        <Shared.SubSectionContents>
           <NameInput
             name={name}
             setName={setName}
             placeholder="상품명을 입력해주세요"
           />
-        </S.SubSectionContents>
+        </Shared.SubSectionContents>
         <ProductCode code={code} />
       </S.CodeSectionContainer>
-    </S.SubSection>
+    </Shared.SubSection>
   );
 }
 

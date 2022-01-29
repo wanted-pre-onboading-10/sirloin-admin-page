@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 const Section = styled.section`
-  width: 875px;
+  width: 100%;
+  max-width: 975px;
   border: 1px solid #ddd;
-  border-radius: 5px;
   font-family: Arial;
   background-color: #f7f7f7;
   text-align: right;
