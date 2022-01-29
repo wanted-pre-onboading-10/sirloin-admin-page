@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 export const Section = styled.section`
-  width: 875px;
-  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 975px;
+  border: 1px solid #eee;
   font-family: Arial;
 `;
 
