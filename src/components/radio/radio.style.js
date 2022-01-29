@@ -20,16 +20,16 @@ export const RadioButton = styled.input.attrs(() => ({
   appearance: none;
   &:checked {
     appearance: none;
-    &::after {
-      content: '';
-      position: absolute;
-      left: 5px;
-      top: 5px;
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
-      background-color: #28205c;
-    }
+  }
+  &:checked &::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: #28205c;
   }
 `;
 
@@ -37,12 +37,3 @@ export const Label = styled.label`
   padding-left: 10px;
   line-height: 30px;
 `;
-
-// export const InnerCircle = styled.span`
-//   background-color: tomato;
-//   position: absolute;
-//   left: 0;
-//   width: 20px;
-//   height: 20px;
-//   z-index: -1000;
-// `;
