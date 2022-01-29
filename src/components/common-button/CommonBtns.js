@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const StyledCommonBtn = styled.button`
-  background-color: white;
   color: ${props => props.theme.colors.black};
   height: 100%;
   border: 1px solid ${props => props.theme.colors.highlight};
@@ -21,13 +20,11 @@ export const StyledCommonSaveBtn = styled(StyledCommonBtn)`
 `;
 
 export const StyledCommonDltRedBtn = styled(StyledCommonBtn)`
-  background-color: white;
   color: red;
   border: 1px solid red;
 `;
 
 export const StyledCommonTransBtn = styled(StyledCommonBtn)`
-  background-color: transparent;
   color: ${props => props.theme.colors.grey_3}
   border: 1px solid #c4c4c4;
 `;

@@ -1,20 +1,21 @@
 import styled from 'styled-components';
 
 export const Section = styled.section`
-  width: 875px;
-  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 975px;
+  border: 1px solid #eee;
   font-family: Arial;
 `;
 
 export const SectionTitle = styled.h2`
   padding: 1rem;
   font-weight: 500;
-  color: #000;
   font-size: 1.1rem;
 `;
 
 export const SubSection = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 175px 1fr;
   border-top: 1px solid #ddd;
 `;
 
@@ -31,15 +32,10 @@ export const SubSectionContents = styled.div`
   padding: 1.2rem 1rem;
   display: flex;
   gap: 5%;
-  width: 95% -200px;
+  width: 95% - 200px;
 `;
 
-export const Button = styled.button`
-  background: transparent;
-  cursor: pointer;
-`;
-
-export const RoundedSquareButton = styled(Button)`
+export const RoundedSquareButton = styled.button`
   padding: 0.9rem 2.25rem;
   border: 1px solid ${props => props.theme.highlight};
   font-size: 0.9rem;

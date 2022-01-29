@@ -1,15 +1,14 @@
 import { useState } from 'react';
 import {
-  DropdownBox,
-  Opener,
-  AcordianLi,
-  H1,
-  Content,
+  MenuButton,
+  AccordionItem,
+  MenuTitle,
+  Accordion,
 } from 'components/common-layout/StyledSidebar';
 
 function SideBar() {
-  const acordianList = ['상품 리스트', '상품 재고 관리', '상품 등록'];
-  const menuList = [
+  const ACCORDION_ITEM_LIST = ['상품 리스트', '상품 재고 관리', '상품 등록'];
+  const MENU_TITLE_LIST = [
     '기본 설정',
     '회원',
     '진열',
@@ -23,23 +22,23 @@ function SideBar() {
   ];
   const [isChecked, setIsChecked] = useState(true);
   return (
-    <DropdownBox>
-      {menuList.map(title => (
+    <div>
+      {MENU_TITLE_LIST.map(menu => (
         <>
-          <Opener
+          <MenuButton
             onClick={() => {
-              if (title === '상품') setIsChecked(!isChecked);
+              if (menu === '상품') setIsChecked(!isChecked);
             }}>
-            <H1 className="h1">{title}</H1>
-          </Opener>
-          <Content isChecked={isChecked} title={title}>
-            {acordianList.map(item => (
-              <AcordianLi>{item}</AcordianLi>
+            <MenuTitle className="h1">{menu}</MenuTitle>
+          </MenuButton>
+          <Accordion isChecked={isChecked} title={menu}>
+            {ACCORDION_ITEM_LIST.map(item => (
+              <AccordionItem>{item}</AccordionItem>
             ))}
-          </Content>
+          </Accordion>
         </>
       ))}
-    </DropdownBox>
+    </div>
   );
 }
 

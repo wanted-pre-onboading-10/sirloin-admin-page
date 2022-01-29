@@ -28,6 +28,7 @@
   "plugins": ["react"],
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "no-unused-vars": 1
+    "no-unused-vars": 1,
+    "import/prefer-default-export": 0
   }
 }
