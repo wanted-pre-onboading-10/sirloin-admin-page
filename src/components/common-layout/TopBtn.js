@@ -53,7 +53,7 @@ function TopBtn() {
     if (optionCheck() !== 0) {
       check = false;
     }
-
+    // if 로 계속 쳬크해주면 될 것 같습니다!
     // 필드 값 채워져있는지 체크
 
     if (check === false) {
