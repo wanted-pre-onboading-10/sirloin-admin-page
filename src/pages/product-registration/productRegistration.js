@@ -10,7 +10,7 @@ function ProductRegistration() {
   return (
     <div>
       <Period />
-      <Information />
+      <Information tabTitle="상품 기본 정보" />
       <Option />
       <ImageTab tabTitle="상품 소개 이미지" />
       <ImageTab tabTitle="구매자 추천 이미지" />

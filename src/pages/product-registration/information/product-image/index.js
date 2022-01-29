@@ -1,8 +1,8 @@
-import ImageInput from 'pages/product-registration/image-tab/imageInput';
+import PropTypes from 'prop-types';
+
+import ImageInput from 'components/image-input';
 
 import * as S from 'pages/product-registration/information/styles';
-
-import PropTypes from 'prop-types';
 
 function ProductImageSubSection({ title, btnText }) {
   return (
