@@ -24,7 +24,7 @@ function SideBar() {
   return (
     <div>
       {MENU_TITLE_LIST.map(menu => (
-        <>
+        <div key={menu}>
           <MenuButton
             onClick={() => {
               if (menu === '상품') setIsChecked(!isChecked);
@@ -33,10 +33,10 @@ function SideBar() {
           </MenuButton>
           <Accordion isChecked={isChecked} title={menu}>
             {ACCORDION_ITEM_LIST.map(item => (
-              <AccordionItem>{item}</AccordionItem>
+              <AccordionItem key={item}>{item}</AccordionItem>
             ))}
           </Accordion>
-        </>
+        </div>
       ))}
     </div>
   );
