@@ -1,10 +1,11 @@
 import ProductRegistration from 'pages/product-registration';
+import ProductInfoContext from 'context/product-info-context';
 
 function App() {
   return (
-    <div>
+    <ProductInfoContext>
       <ProductRegistration />
-    </div>
+    </ProductInfoContext>
   );
 }
 

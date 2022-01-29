@@ -8,12 +8,18 @@ const wrapper = css`
 `;
 
 const colors = {
-  highlight: '#2A18BD',
+  highlight: '#2517b5',
+  primary_1: '#28205C',
+  primary_2: '#2000AE',
+  primary_3: '#9E96E2',
+  primary_4: '#EBEBF2',
   black: '#000000',
-  white: '#fff',
-  gray_1: '#666',
-  gray_2: '#ddd',
-  gray_3: '#e1e2e3',
+  white: 'FFFFFf',
+  green: '#E7F7D5',
+  gray_1: '#9E9E9E',
+  gray_2: '#ABA9AB',
+  gray_3: '#E7E7E7',
+  gray_4: '#FAFAFA',
 };
 
 const theme = {
