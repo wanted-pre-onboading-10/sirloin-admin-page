@@ -19,7 +19,7 @@ const colors = {
   gray_1: '#9E9E9E',
   gray_2: '#ABA9AB',
   gray_3: '#E7E7E7',
-  gray_4: '#FAFAF',
+  gray_4: '#FAFAFA',
 };
 
 const theme = {

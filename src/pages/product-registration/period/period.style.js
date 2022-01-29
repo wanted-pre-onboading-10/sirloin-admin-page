@@ -1,0 +1,46 @@
+import styled from 'styled-components';
+
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 875px;
+  border: 1px solid #eee;
+`;
+
+export const Title = styled.div`
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 13px;
+`;
+
+export const Row = styled.div`
+  display: flex;
+  border-bottom: 1px solid #ccc;
+`;
+
+export const RowTitle = styled.div`
+  flex: 1;
+  padding: 25px 20px;
+  background-color: ${({ theme }) => theme.colors.gray_4};
+  border: 1px solid #eee;
+  font-size: 17px;
+`;
+
+export const RowContent = styled.div`
+  flex: 5.41;
+  padding: 25px 30px;
+`;
+
+export const DatePickerContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const Separator = styled.p`
+  display: flex;
+  justify-content: center;
+  margin: 0 20px;
+`;
