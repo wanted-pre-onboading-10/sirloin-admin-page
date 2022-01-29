@@ -20,14 +20,14 @@
     
     
 ##  배포
-🔗 배포 링크 : 
+배포 링크 : https://naughty-gates-7d992b.netlify.app/
 
 
 ## 팀원
-- @2kyung19
-- @tae100k
-- @wook95
-- @hyundonny
+- [@2kyung19](https://github.com/2kyung19)
+- [@tae100k](https://github.com/tae100k)
+- [@wook95](https://github.com/wook95)
+- [@hyundonny](https://github.com/hyundonny)
 
 
 ## 기능
@@ -95,7 +95,8 @@
     │   │    └── TotalContainer.js   
     │   └── common-tab
     │       └── CommonTab.js
-    │
+    ├── context
+    │   └── product-info-context.js
     ├── index.js
     ├── pages/product-registration
     │   ├── delivery
@@ -144,4 +145,21 @@
 
 ```
 
-## 배운점
+## 잘한점
+#### 김태희
+- 화살표 함수, 다양한 import export 방식과 같이 기본적인 부분부터 useMemo, useRef와 같이 리액트 훅들에 대해서도 더 공부해보고 사용하며 성장할 수 있는 기회였습니다.
+
+#### 문현돈
+- 기능 구현을 중심으로 빠르게 맡은 부분을 완료했다.
+- 공통된 CSS 스타일을 파악한 후 취합해, 많은 부분에서 CSS 코드를 줄일 수 있었다.
+- 문자열을 하드코딩하는 대신, 최대한 constants를 활용하려 노력했다.
+
+
+#### 이경은
+- 미리 이슈를 생성하고, 업무를 계획적으로 분장하여 효율적으로 과제를 처리할 수 있었습니다.
+- 이슈와 PR을 전략적으로 사용하면서 충돌 없이 병합이 잘 되었습니다.
+- 짧은 미팅을 여러번 진행하여, 진행상황을 공유하고, 서로 피드백하면서 빠르게 맡은 부분을 구현할 수 있었습니다.
+
+#### 이욱창
+- UI 관련해서 많이 시도해 보지 못했던 부분들을 도전해 볼 수 있어서 좋았습니다.
+- 통일성 있는 코드를 만들기 위해서 각자 습득해왔던 지식을 나누고, 통일할 수 있어서 좋았습니다.
