@@ -8,19 +8,6 @@ const wrapper = css`
 `;
 
 const colors = {
-<<<<<<< HEAD
-  primary_1: '#28205c',
-  primary_2: '#2000ae',
-  primary_3: '#9e96e2',
-  primary_4: '#ebebf2',
-  black: '#000000',
-  white: '#fff',
-  green: '#e7f7d5',
-  gray_1: '#9e9e9e',
-  gray_2: '##aba9ab',
-  gray_3: '#e7e7e7',
-  gray_4: '#fafafa',
-=======
   highlight: '#2517b5',
   primary_1: '#28205C',
   primary_2: '#2000AE',
@@ -33,7 +20,6 @@ const colors = {
   gray_2: '#ABA9AB',
   gray_3: '#E7E7E7',
   gray_4: '#FAFAF',
->>>>>>> develop
 };
 
 const theme = {

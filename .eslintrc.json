@@ -29,11 +29,7 @@
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "no-unused-vars": 1,
-<<<<<<< HEAD
     "import/prefer-default-export": 0,
     "react/jsx-props-no-spreading": 1
-=======
-    "import/prefer-default-export": 0
->>>>>>> develop
   }
 }
