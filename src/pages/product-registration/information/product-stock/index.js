@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 import * as Shared from 'styles/shared';
 
-const TITLE = '상품 총 재고';
+const TITLE = '상품 총 재고 *';
 
 function ProductStockSubSection({ stock }) {
   return (

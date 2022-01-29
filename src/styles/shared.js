@@ -26,6 +26,7 @@ export const SubSectionTitle = styled.h3`
   letter-spacing: 1px;
   border-right: 1px solid #ddd;
   word-break: keep-all;
+  padding-right: 2rem;
 `;
 
 export const SubSectionContents = styled.div`

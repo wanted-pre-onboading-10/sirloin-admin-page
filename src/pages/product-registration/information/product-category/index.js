@@ -1,19 +1,30 @@
-import { useState } from 'react';
+import { useContext } from 'react';
+import { ProductInfoContextStore } from 'context/product-info-context';
 
 import * as Shared from 'styles/shared';
 
 import CategoryList from 'pages/product-registration/information/product-category/category-list';
 import SelectedList from 'pages/product-registration/information/product-category/selected-list';
 
+const SECTION_TITLE = '카테고리 *';
+
 function CategorySubSection() {
-  const [selected, setSelected] = useState([]);
+  const { selectedCategories, setSelectedCategories } = useContext(
+    ProductInfoContextStore,
+  );
 
   return (
     <Shared.SubSection>
-      <Shared.SubSectionTitle>카테고리</Shared.SubSectionTitle>
+      <Shared.SubSectionTitle>{SECTION_TITLE}</Shared.SubSectionTitle>
       <Shared.SubSectionContents>
-        <CategoryList selected={selected} setSelected={setSelected} />
-        <SelectedList selected={selected} setSelected={setSelected} />
+        <CategoryList
+          selected={selectedCategories}
+          setSelected={setSelectedCategories}
+        />
+        <SelectedList
+          selected={selectedCategories}
+          setSelected={setSelectedCategories}
+        />
       </Shared.SubSectionContents>
     </Shared.SubSection>
   );
