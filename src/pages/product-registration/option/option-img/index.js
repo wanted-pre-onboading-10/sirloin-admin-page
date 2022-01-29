@@ -30,7 +30,7 @@ function OptionImg({ idx, optionSet, setOptionSet }) {
   return (
     <S.OptionImage>
       <S.OptionInputLabel htmlFor={`img-${idx}`} src={optionSet[idx].image}>
-        <S.OptionInputButton>+ 이미지 첨부</S.OptionInputButton>
+        <S.OptionInputBtn>+ 이미지 첨부</S.OptionInputBtn>
       </S.OptionInputLabel>
       <S.OptionImageInput
         id={`img-${idx}`}

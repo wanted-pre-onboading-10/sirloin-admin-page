@@ -57,6 +57,9 @@ function Option() {
       ) : (
         <OptionSetBox optionSet={optionSet} setOptionSet={setOptionSet} />
       )}
+      <button type="button" onClick={tableCheck}>
+        체크
+      </button>
     </S.Section>
   );
 }

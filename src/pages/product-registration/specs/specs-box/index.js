@@ -1,6 +1,5 @@
 import propTypes from 'prop-types';
-import * as S from 'pages/product-registration/option/styles';
-
+import * as S from 'pages/product-registration/specs/styles';
 import { getIdx } from 'pages/product-registration/option/utils';
 
 function SpecsBox({ productInfo, setProductInfo }) {
@@ -101,10 +100,8 @@ function SpecsBox({ productInfo, setProductInfo }) {
               type="button"
               value={infoIdx}
               onClick={removeProductInfo}
-              color="#ddd"
               font="#888"
-              margin={20}
-              marginTB={20}>
+              margin={20}>
               삭제
             </S.DeleteBtn>
           </S.TabTop>
@@ -145,8 +142,6 @@ function SpecsBox({ productInfo, setProductInfo }) {
                     value={`${infoIdx}/${idx}`}
                     onClick={removeOtherInfo}
                     height="45px"
-                    color="#ddd"
-                    font="red"
                     width={100}>
                     삭제
                   </S.DeleteBtn>
@@ -154,20 +149,13 @@ function SpecsBox({ productInfo, setProductInfo }) {
               </S.Row>
             ))}
             <S.CommonBtn type="button" value={infoIdx} onClick={addOtherInfo}>
-              {' '}
               + 항목 추가
             </S.CommonBtn>
           </S.Table>
         </S.Tab>
       ))}
 
-      <S.CommonSquareBtn
-        type="button"
-        onClick={addProductInfo}
-        width="calc(100% - 20px)"
-        marginLR={10}
-        marginTB={20}
-        back="#efefef">
+      <S.CommonSquareBtn type="button" onClick={addProductInfo}>
         + 정보고시 추가
       </S.CommonSquareBtn>
     </div>

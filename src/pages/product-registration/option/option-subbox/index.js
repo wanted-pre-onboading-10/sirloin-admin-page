@@ -26,7 +26,7 @@ function OptionSubBox({ setIdx, optIdx, optionSet, setOptionSet }) {
   const saveSubOptionTitle = (set, opt, sub, e) => {
     const option = [...optionSet];
 
-    option[set].option[optIdx].subOption[sub].title = e.target.value;
+    option[set].option[opt].subOption[sub].title = e.target.value;
     setOptionSet(option);
   };
   const saveSubRegularPrice = (set, opt, sub, e) => {
@@ -69,13 +69,13 @@ function OptionSubBox({ setIdx, optIdx, optionSet, setOptionSet }) {
         </div>
       ))}
       <div>
-        <S.PlusButton
+        <S.PlusBtn
           type="button"
           value={`${setIdx}/${optIdx}`}
           onClick={addSubOption}>
           +
-        </S.PlusButton>
-        <S.PlusButtonLabel>추가 옵션 상품 등록</S.PlusButtonLabel>
+        </S.PlusBtn>
+        <S.PlusBtnLabel>추가 옵션 상품 등록</S.PlusBtnLabel>
       </div>
     </div>
   );
