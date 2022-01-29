@@ -31,7 +31,7 @@ export const SubSectionContents = styled.div`
   padding: 1.2rem 1rem;
   display: flex;
   gap: 5%;
-  width: 80%;
+  width: 95% -200px;
 `;
 
 export const Button = styled.button`
