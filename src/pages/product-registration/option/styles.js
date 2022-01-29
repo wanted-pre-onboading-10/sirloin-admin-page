@@ -7,7 +7,6 @@ const Section = styled.section`
   font-family: Arial;
   background-color: #f7f7f7;
   text-align: right;
-  margin-top: 50px;
 `;
 
 const SectionTop = styled.div`
