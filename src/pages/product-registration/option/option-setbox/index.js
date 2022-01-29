@@ -1,11 +1,14 @@
-import propTypes from 'prop-types';
+import { useContext } from 'react';
+import { ProductInfoContextStore } from 'context/product-info-context';
 import * as S from 'pages/product-registration/option/styles';
 
 import OptionImg from 'pages/product-registration/option/option-img';
 import OptionBox from 'pages/product-registration/option/option-box';
 import OptionSubBox from 'pages/product-registration/option/option-subbox';
 
-function OptionSetBox({ optionSet, setOptionSet }) {
+function OptionSetBox() {
+  const { optionSet, setOptionSet } = useContext(ProductInfoContextStore);
+
   const removeOptionSet = e => {
     const option = [...optionSet];
 
@@ -34,27 +37,13 @@ function OptionSetBox({ optionSet, setOptionSet }) {
             삭제
           </S.DeleteBtn>
           <S.Tab>
-            <OptionImg
-              idx={setIdx}
-              optionSet={optionSet}
-              setOptionSet={setOptionSet}
-            />
+            <OptionImg idx={setIdx} />
 
             {set.option.map((opt, optIdx) => (
               <S.OptionBox key={(opt, optIdx)}>
-                <OptionBox
-                  setIdx={setIdx}
-                  optIdx={optIdx}
-                  optionSet={optionSet}
-                  setOptionSet={setOptionSet}
-                />
+                <OptionBox setIdx={setIdx} optIdx={optIdx} />
 
-                <OptionSubBox
-                  setIdx={setIdx}
-                  optIdx={optIdx}
-                  optionSet={optionSet}
-                  setOptionSet={setOptionSet}
-                />
+                <OptionSubBox setIdx={setIdx} optIdx={optIdx} />
               </S.OptionBox>
             ))}
 
@@ -72,10 +61,5 @@ function OptionSetBox({ optionSet, setOptionSet }) {
     </>
   );
 }
-
-OptionSetBox.propTypes = {
-  optionSet: propTypes.arrayOf(propTypes.object).isRequired,
-  setOptionSet: propTypes.func.isRequired,
-};
 
 export default OptionSetBox;

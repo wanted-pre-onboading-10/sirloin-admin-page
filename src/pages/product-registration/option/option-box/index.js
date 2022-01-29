@@ -1,9 +1,13 @@
-import propTypes from 'prop-types';
+import { useContext } from 'react';
+import { ProductInfoContextStore } from 'context/product-info-context';
 import * as S from 'pages/product-registration/option/styles';
+import propTypes from 'prop-types';
 
 import { getIdx } from 'pages/product-registration/option/utils';
 
-function OptionBox({ setIdx, optIdx, optionSet, setOptionSet }) {
+function OptionBox({ setIdx, optIdx }) {
+  const { optionSet, setOptionSet } = useContext(ProductInfoContextStore);
+
   const removeOption = e => {
     const option = [...optionSet];
     const idx = getIdx(e.target.value);
@@ -120,8 +124,6 @@ function OptionBox({ setIdx, optIdx, optionSet, setOptionSet }) {
 OptionBox.propTypes = {
   setIdx: propTypes.number.isRequired,
   optIdx: propTypes.number.isRequired,
-  optionSet: propTypes.arrayOf(propTypes.object).isRequired,
-  setOptionSet: propTypes.func.isRequired,
 };
 
 export default OptionBox;

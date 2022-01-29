@@ -1,7 +1,11 @@
-import propTypes from 'prop-types';
+import { useContext } from 'react';
+import { ProductInfoContextStore } from 'context/product-info-context';
 import * as S from 'pages/product-registration/option/styles';
+import propTypes from 'prop-types';
 
-function OptionImg({ idx, optionSet, setOptionSet }) {
+function OptionImg({ idx }) {
+  const { optionSet, setOptionSet } = useContext(ProductInfoContextStore);
+
   const readFileAsync = file => {
     const fileURL = new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -44,8 +48,6 @@ function OptionImg({ idx, optionSet, setOptionSet }) {
 
 OptionImg.propTypes = {
   idx: propTypes.number.isRequired,
-  optionSet: propTypes.arrayOf(propTypes.object).isRequired,
-  setOptionSet: propTypes.func.isRequired,
 };
 
 export default OptionImg;

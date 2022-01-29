@@ -1,13 +1,12 @@
-import { useState } from 'react';
+import { useEffect, useContext } from 'react';
+import { ProductInfoContextStore } from 'context/product-info-context';
 import * as S from 'pages/product-registration/option/styles';
 
 import OptionTop from 'pages/product-registration/option/option-top';
 import OptionSetBox from 'pages/product-registration/option/option-setbox';
-import { useEffect } from 'react/cjs/react.development';
 
 function Option() {
-  const [optionSet, setOptionSet] = useState([]);
-  const [stock, setStock] = useState(0);
+  const { optionSet, setStock } = useContext(ProductInfoContextStore);
 
   const tableCheck = () => {
     const msg = [];
@@ -46,7 +45,6 @@ function Option() {
       }
     }
 
-    console.log(optionSet);
     alert([...new Set(msg)]);
   };
 
@@ -68,16 +66,13 @@ function Option() {
 
   return (
     <S.Section>
-      <OptionTop optionSet={optionSet} setOptionSet={setOptionSet} />
+      <OptionTop />
 
       {optionSet.length === 0 ? (
         <S.InitOption>옵션세트를 추가하여 옵션을 구성해 주세요.</S.InitOption>
       ) : (
-        <OptionSetBox optionSet={optionSet} setOptionSet={setOptionSet} />
+        <OptionSetBox />
       )}
-      <button type="button" onClick={tableCheck}>
-        체크
-      </button>
     </S.Section>
   );
 }
