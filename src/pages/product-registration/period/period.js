@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import Radio from 'components/radio';
-import * as S from 'pages/product-registration/period/period.style';
-
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import { DateTimePicker } from '@mui/lab';
 import { TextField } from '@mui/material';
 import { ReactComponent as ChevronDown } from 'assets/images/chevron-down.svg';
+import * as S from 'pages/product-registration/period/period.style';
 
 function Period() {
   const [isExposure, setIsExposure] = useState(true);
@@ -155,7 +154,3 @@ function Period() {
 }
 
 export default Period;
-
-const NO_LIMIT = '제한 없음';
-const NO_PRESENT = '미노출';
-const SET_TERM = '노출 기간 설정';
