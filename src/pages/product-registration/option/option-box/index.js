@@ -55,6 +55,8 @@ function OptionBox({ setIdx, optIdx, optionSet, setOptionSet }) {
     const sale = optionSet[set].option[opt].salePrice;
     const rate = Math.floor(((regular - sale) / regular) * 100);
 
+    if (sale === '') return '할인율';
+    if (regular === '' || regular === '0') return '할인율';
     if (Number.isNaN(rate)) return '할인율';
     return rate;
   };
