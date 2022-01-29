@@ -62,7 +62,7 @@ function OptionSetBox({ optionSet, setOptionSet }) {
               type="button"
               value={setIdx}
               onClick={addOption}
-              width="calc(100% - 20px)"
+              width="calc(100%)"
               marginTB={10}>
               + 옵션 추가
             </S.CommonSquareBtn>

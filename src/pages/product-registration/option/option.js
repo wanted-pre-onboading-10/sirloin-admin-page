@@ -3,9 +3,11 @@ import * as S from 'pages/product-registration/option/styles';
 
 import OptionTop from 'pages/product-registration/option/option-top';
 import OptionSetBox from 'pages/product-registration/option/option-setbox';
+import { useEffect } from 'react/cjs/react.development';
 
 function Option() {
   const [optionSet, setOptionSet] = useState([]);
+  const [stock, setStock] = useState(0);
 
   const tableCheck = () => {
     const msg = [];
@@ -48,6 +50,22 @@ function Option() {
     alert([...new Set(msg)]);
   };
 
+  const calcStock = () => {
+    let count = 0;
+
+    for (let i = 0; i < optionSet.length; i += 1) {
+      for (let j = 0; j < optionSet[i].option.length; j += 1) {
+        count += Number(optionSet[i].option[j].stock);
+      }
+    }
+
+    setStock(count);
+  };
+
+  useEffect(() => {
+    calcStock();
+  }, [optionSet]);
+
   return (
     <S.Section>
       <OptionTop optionSet={optionSet} setOptionSet={setOptionSet} />
@@ -57,6 +75,9 @@ function Option() {
       ) : (
         <OptionSetBox optionSet={optionSet} setOptionSet={setOptionSet} />
       )}
+      <button type="button" onClick={tableCheck}>
+        체크
+      </button>
     </S.Section>
   );
 }

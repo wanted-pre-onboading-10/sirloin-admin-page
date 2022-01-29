@@ -5,15 +5,8 @@ const Section = styled.section`
   border: 1px solid #ddd;
   border-radius: 5px;
   font-family: Arial;
-  background-color: #efefef;
+  background-color: #f7f7f7;
   text-align: right;
-`;
-
-const SectionTitle = styled.h2`
-  padding: 1rem;
-  font-weight: 900;
-  color: #000;
-  font-size: 1.1rem;
 `;
 
 const SectionTop = styled.div`
@@ -24,15 +17,63 @@ const SectionTop = styled.div`
   margin-bottom: 10px;
 `;
 
-const Title = styled.div`
-  font-size: 20px;
-  font-weight: bold;
+const SectionTitle = styled.h2`
+  padding: 1rem;
+  font-weight: 500;
+  color: #000;
+  font-size: 1.1rem;
+`;
+
+const Tab = styled.div`
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: ${props => props.padding || 10}px;
   margin: 10px;
+  margin-top: 0px;
+  text-align: left;
+`;
+
+const TabTop = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const InputBox = styled.div`
   display: flex;
   justify-content: space-between;
+`;
+
+const OptionBox = styled.div`
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 10px 0px;
+  font-size: 13px;
+`;
+
+const OptionBoxTop = styled.div`
+  text-align: right;
+`;
+
+const SubOptionBox = styled.div`
+  padding-left: 40px;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const CenterBox = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const InitOption = styled.div`
+  margin-top: 100px;
+  margin-bottom: 100px;
+  text-align: center;
 `;
 
 const InputText = styled.input`
@@ -49,67 +90,6 @@ const Select = styled.select`
   border-radius: 5px;
   margin: 10px;
   background-color: #fff;
-`;
-
-const InitOption = styled.div`
-  margin-top: 100px;
-  margin-bottom: 100px;
-  text-align: center;
-`;
-
-const Tab = styled.div`
-  background-color: #fff;
-  border: 1px solid #ddd;
-  padding: ${props => props.padding || 10}px;
-  margin: 10px;
-  margin-top: 0px;
-  text-align: left;
-`;
-
-const Table = styled.div`
-  margin: 10px;
-  width: calc(100% - 20px);
-`;
-
-const RowTitle = styled.div`
-  width: 200px;
-`;
-const Row = styled.div`
-  width: ${props => props.width || 'auto'};
-  display: flex;
-  justify-content: space-between;
-  align-items: center; ;
-`;
-
-const TabTop = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-const OptionBox = styled.div`
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  margin: 10px 0px;
-  font-size: 13px;
-`;
-
-const CenterBox = styled.div`
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
-
-const OptionBoxTop = styled.div`
-  text-align: right;
-`;
-
-const SubOptionBox = styled.div`
-  padding-left: 40px;
-  display: flex;
-  justify-content: space-between;
 `;
 
 const SubOptionTree = styled.img`
@@ -151,7 +131,7 @@ const OptionInputLabel = styled.label`
   background-repeat: no-repeat;
 `;
 
-const OptionInputButton = styled.span`
+const OptionInputBtn = styled.span`
   position: relative;
   top: 50%;
   transform: translateX(-50%);
@@ -173,15 +153,6 @@ const CommonSquareBtn = styled.button`
   margin-right: ${props => props.marginLR || 0}px;
 `;
 
-const CommonBtn = styled.button`
-  padding: 0.8rem;
-  width: 150px;
-  color: #2000ae;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  margin: 10px 0;
-`;
-
 const DeleteBtn = styled.button`
   width: ${props => props.width || 50}px;
   height: ${props => props.height || 'auto'};
@@ -195,7 +166,7 @@ const DeleteBtn = styled.button`
   margin-top: ${props => props.marginTB || 10}px;
 `;
 
-const PlusButton = styled.button`
+const PlusBtn = styled.button`
   margin: 0 0 10px 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -204,7 +175,7 @@ const PlusButton = styled.button`
   background-color: #fff;
 `;
 
-const PlusButtonLabel = styled.span`
+const PlusBtnLabel = styled.span`
   position: relative;
   bottom: 3px;
   left: 10px;
@@ -223,29 +194,24 @@ export {
   Section,
   SectionTop,
   SectionTitle,
-  Title,
   Tab,
-  Table,
-  Row,
-  RowTitle,
   TabTop,
-  CommonSquareBtn,
-  CommonBtn,
-  DeleteBtn,
-  InitOption,
+  InputBox,
   OptionBox,
   OptionBoxTop,
   SubOptionBox,
   CenterBox,
+  InitOption,
+  InputText,
+  Select,
   SubOptionTree,
   OptionImage,
   OptionImageInput,
   OptionInputLabel,
-  OptionInputButton,
-  PlusButton,
-  PlusButtonLabel,
-  InputText,
-  InputBox,
-  Select,
+  OptionInputBtn,
+  CommonSquareBtn,
+  DeleteBtn,
+  PlusBtn,
+  PlusBtnLabel,
   DiscountRate,
 };
