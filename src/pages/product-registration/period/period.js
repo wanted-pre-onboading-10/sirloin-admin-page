@@ -35,10 +35,6 @@ function Period() {
     setIsSellLimited(true);
   };
 
-  // const changeVisible = () => {
-
-  // }
-
   return (
     <S.Container>
       <S.Title>노출 및 판매 기간 설정</S.Title>
