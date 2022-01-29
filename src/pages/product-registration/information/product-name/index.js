@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { nanoid } from 'nanoid';
+import { ProductInfoContextStore } from 'context/product-info-context';
 
 import * as S from 'pages/product-registration/information/styles';
 import * as Shared from 'styles/shared';
@@ -7,14 +8,17 @@ import * as Shared from 'styles/shared';
 import NameInput from 'pages/product-registration/information/product-name/name-input';
 import ProductCode from 'pages/product-registration/information/product-name/product-code';
 
+const SECTION_TITLE = '상품명 *';
+const PRODUCT_NAME_INPUT_PLACEHOLDER = '상품명을 입력해주세요';
+
 function ProductNameSubSection() {
-  const [name, setName] = useState('');
   const [code, setCode] = useState('');
+  const { productName, setProductName } = useContext(ProductInfoContextStore);
 
   useEffect(() => {
     let id = null;
 
-    if (name === '') setCode('');
+    if (productName === '') setCode('');
     else {
       id = setTimeout(() => {
         setCode(nanoid().slice(0, 10));
@@ -24,17 +28,17 @@ function ProductNameSubSection() {
     return () => {
       if (id) clearTimeout(id);
     };
-  }, [name]);
+  }, [productName]);
 
   return (
     <Shared.SubSection>
-      <Shared.SubSectionTitle>상품명</Shared.SubSectionTitle>
+      <Shared.SubSectionTitle>{SECTION_TITLE}</Shared.SubSectionTitle>
       <S.CodeSectionContainer>
         <Shared.SubSectionContents>
           <NameInput
-            name={name}
-            setName={setName}
-            placeholder="상품명을 입력해주세요"
+            name={productName}
+            setName={setProductName}
+            placeholder={PRODUCT_NAME_INPUT_PLACEHOLDER}
           />
         </Shared.SubSectionContents>
         <ProductCode code={code} />
