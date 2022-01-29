@@ -1,7 +1,9 @@
-import propTypes from 'prop-types';
 import * as S from 'pages/product-registration/option/styles';
+import { useContext } from 'react';
+import { ProductInfoContextStore } from 'context/product-info-context';
 
-function OptionTop({ optionSet, setOptionSet }) {
+function OptionTop() {
+  const { optionSet, setOptionSet } = useContext(ProductInfoContextStore);
   const addOptionSet = () => {
     setOptionSet([
       ...optionSet,
@@ -30,10 +32,5 @@ function OptionTop({ optionSet, setOptionSet }) {
     </S.SectionTop>
   );
 }
-
-OptionTop.propTypes = {
-  optionSet: propTypes.arrayOf(propTypes.object).isRequired,
-  setOptionSet: propTypes.func.isRequired,
-};
 
 export default OptionTop;
