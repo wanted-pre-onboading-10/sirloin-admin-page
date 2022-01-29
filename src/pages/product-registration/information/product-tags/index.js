@@ -5,6 +5,7 @@ import TagSearchResults from 'pages/product-registration/information/product-tag
 import SelectedTagBox from 'pages/product-registration/information/product-tags/selected-tags';
 
 import * as S from 'pages/product-registration/information/styles';
+import * as Shared from 'styles/shared';
 
 import {
   TAGS,
@@ -55,8 +56,8 @@ function ProductTagSubSection() {
   });
 
   return (
-    <S.SubSection>
-      <S.SubSectionTitle>{SUB_SECTION_TITLE}</S.SubSectionTitle>
+    <Shared.SubSection>
+      <Shared.SubSectionTitle>{SUB_SECTION_TITLE}</Shared.SubSectionTitle>
       <S.TagSectionContents>
         <TagSearchBox
           searchTerm={searchTerm}
@@ -76,7 +77,7 @@ function ProductTagSubSection() {
           setSelectedTags={setSelectedTags}
         />
       </S.TagSectionContents>
-    </S.SubSection>
+    </Shared.SubSection>
   );
 }
 

@@ -6,6 +6,7 @@ import { DateTimePicker } from '@mui/lab';
 import { TextField } from '@mui/material';
 import { ReactComponent as ChevronDown } from 'assets/images/chevron-down.svg';
 import * as S from 'pages/product-registration/period/period.style';
+import * as Shared from 'styles/shared';
 
 function Period() {
   const [isExposure, setIsExposure] = useState(true);
@@ -35,11 +36,11 @@ function Period() {
   };
 
   return (
-    <S.Container>
-      <S.Title>노출 및 판매 기간 설정</S.Title>
-      <S.Row>
-        <S.RowTitle>상품 노출 기한</S.RowTitle>
-        <S.RowContent>
+    <Shared.Section>
+      <Shared.SectionTitle>노출 및 판매 기간 설정</Shared.SectionTitle>
+      <Shared.SubSection>
+        <Shared.SubSectionTitle>상품 노출 기한</Shared.SubSectionTitle>
+        <Shared.ColumnSubSectionContents>
           <Radio
             radioName="exposure"
             id="noLimitExposure"
@@ -91,11 +92,11 @@ function Period() {
               />
             </LocalizationProvider>
           </S.DatePickerContainer>
-        </S.RowContent>
-      </S.Row>
-      <S.Row>
-        <S.RowTitle>상품 판매 기한</S.RowTitle>
-        <S.RowContent>
+        </Shared.ColumnSubSectionContents>
+      </Shared.SubSection>
+      <Shared.SubSection>
+        <Shared.SubSectionTitle>상품 판매 기한</Shared.SubSectionTitle>
+        <Shared.ColumnSubSectionContents>
           <Radio
             radioName="sell"
             id="noLimitSell"
@@ -147,9 +148,9 @@ function Period() {
               />
             </LocalizationProvider>
           </S.DatePickerContainer>
-        </S.RowContent>
-      </S.Row>
-    </S.Container>
+        </Shared.ColumnSubSectionContents>
+      </Shared.SubSection>
+    </Shared.Section>
   );
 }
 

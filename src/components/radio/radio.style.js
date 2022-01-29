@@ -21,7 +21,7 @@ export const RadioButton = styled.input.attrs(() => ({
   &:checked {
     appearance: none;
   }
-  &:checked &::after {
+  &:checked&::after {
     content: '';
     position: absolute;
     left: 5px;

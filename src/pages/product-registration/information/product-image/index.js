@@ -1,19 +1,20 @@
 import PropTypes from 'prop-types';
 
-import ImageInput from 'components/image-input';
-
 import * as S from 'pages/product-registration/information/styles';
+import * as Shared from 'styles/shared';
+
+import ImageInput from 'components/image-input';
 
 function ProductImageSubSection({ title, btnText }) {
   return (
-    <S.SubSection>
-      <S.SubSectionTitle>{title}</S.SubSectionTitle>
-      <S.SubSectionContents>
+    <Shared.SubSection>
+      <Shared.SubSectionTitle>{title}</Shared.SubSectionTitle>
+      <Shared.SubSectionContents>
         <ImageInput>
           <S.RoundedSquareButton>{btnText}</S.RoundedSquareButton>
         </ImageInput>
-      </S.SubSectionContents>
-    </S.SubSection>
+      </Shared.SubSectionContents>
+    </Shared.SubSection>
   );
 }
 

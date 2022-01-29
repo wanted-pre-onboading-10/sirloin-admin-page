@@ -1,24 +1,8 @@
 import styled from 'styled-components';
+import * as Shared from 'styles/shared';
 
-export const Section = styled.section`
-  width: 100%;
-  max-width: 975px;
-  border: 1px solid #eee;
-  font-family: Arial;
-`;
-
-export const SectionTitle = styled.h2`
-  padding: 1rem;
-  font-weight: 500;
-  color: #000;
-  font-size: 1.1rem;
-  border-bottom: 1px solid #ddd;
-`;
-
-export const SectionContents = styled.div`
-  padding: 1.5rem;
-  display: flex;
-  gap: 5%;
+export const SectionContents = styled(Shared.SubSectionContents)`
+  border-top: 1px solid #ddd;
 `;
 
 export const SquareButton = styled.button`

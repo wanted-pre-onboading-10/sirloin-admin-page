@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import SlideToggle from 'components/slide-toggle/slideToggle';
-import * as S from 'pages/product-registration/misc/misc.style';
+import * as Shared from 'styles/shared';
 
 function Misc() {
   const [isMileageSave, setIsMileageSave] = useState(true);
@@ -8,29 +8,29 @@ function Misc() {
 
   return (
     <>
-      <S.Container>
-        <S.Title>상품 혜택 허용 설정</S.Title>
-        <S.Row>
-          <S.RowTitle>마일리지 적립</S.RowTitle>
-          <S.RowContent>
+      <Shared.Section>
+        <Shared.SectionTitle>상품 혜택 허용 설정</Shared.SectionTitle>
+        <Shared.SubSection>
+          <Shared.SubSectionTitle>마일리지 적립</Shared.SubSectionTitle>
+          <Shared.SubSectionContents>
             <SlideToggle
               checked
               onChange={e => setIsMileageSave(e.target.checked)}
             />
-          </S.RowContent>
-        </S.Row>
-      </S.Container>
-      <S.Container>
-        <S.Title>기타 설정</S.Title>
-        <S.Row>
-          <S.RowTitle>감사카드 제공</S.RowTitle>
-          <S.RowContent>
+          </Shared.SubSectionContents>
+        </Shared.SubSection>
+      </Shared.Section>
+      <Shared.Section>
+        <Shared.SectionTitle>기타 설정</Shared.SectionTitle>
+        <Shared.SubSection>
+          <Shared.SubSectionTitle>감사카드 제공</Shared.SubSectionTitle>
+          <Shared.SubSectionContents>
             <SlideToggle
               onChange={e => setIsGratitudeServe(e.target.checked)}
             />
-          </S.RowContent>
-        </S.Row>
-      </S.Container>
+          </Shared.SubSectionContents>
+        </Shared.SubSection>
+      </Shared.Section>
     </>
   );
 }
