@@ -8,6 +8,8 @@ import ProductIntroSubSection from 'pages/product-registration/information/produ
 import ProductImageSubSection from 'pages/product-registration/information/product-image';
 import ProductStockSubSection from 'pages/product-registration/information/product-stock';
 import ProductTagSubSection from 'pages/product-registration/information/product-tags';
+import { useContext } from 'react';
+import { ProductInfoContextStore } from 'context/product-info-context';
 
 const ImageSectionsData = [
   { title: '상품 썸네일', btnText: '+ 이미지 첨부' },
@@ -15,6 +17,8 @@ const ImageSectionsData = [
 ];
 
 function Information({ tabTitle }) {
+  const { stock } = useContext(ProductInfoContextStore);
+
   return (
     <Shared.Section>
       <Shared.SectionTitle>{tabTitle}</Shared.SectionTitle>
@@ -25,7 +29,7 @@ function Information({ tabTitle }) {
       {ImageSectionsData.map(({ title, btnText }) => (
         <ProductImageSubSection title={title} btnText={btnText} key={title} />
       ))}
-      <ProductStockSubSection stock="##" />
+      <ProductStockSubSection stock={stock.toString()} />
     </Shared.Section>
   );
 }
